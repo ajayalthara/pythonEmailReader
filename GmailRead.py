@@ -4,9 +4,17 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+
 
 # Define the scopes for Gmail access
 GCLOUD_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+# Load .env file
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+
 
 def gmail_authenticate():
     creds = None
